@@ -1,4 +1,4 @@
-type Options = {
+export type Options = {
     maskWith?: string;
     unmaskedStartCharacters?: number;
     unmaskedEndCharacters?: number;
