@@ -126,3 +126,10 @@ test("Mask but ignore many characters", () => {
     const maskedValue = "abc--***123";
     expect(maskString(text, { ignoreChars })).toBe(maskedValue);
 });
+
+test("Mask but ignore many characters again", () => {
+    const ignoreChars = ["a-p", "1-3"];
+    const text = "abcdefghijklmnopqrstuvwxyz123456";
+    const maskedValue = "abcdefghijklmnop**********123***";
+    expect(maskString(text, { ignoreChars })).toBe(maskedValue);
+});
