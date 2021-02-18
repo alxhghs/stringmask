@@ -23,6 +23,10 @@ str = maskString("123-00-0000", { unmaskedEndCharacters: 4 });
 // *******0000
 str = maskString("123-00-0000", { ignoreChars: ["-"] });
 // ***-**-****
+str = maskString("abcdefghijklmnopqrstuvwxyz123456", {
+    ignoreChars: ["a-p", "1-3"],
+});
+// abcdefghijklmnop**********123***
 ```
 
 # Types

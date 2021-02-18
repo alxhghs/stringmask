@@ -1,6 +1,6 @@
 {
   "name": "@alxhghs/stringmask",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple library for masking strings",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
