@@ -1,5 +1,5 @@
 {
-  "name": "stringmask",
+  "name": "@alxhghs/stringmask",
   "version": "1.0.0",
   "description": "Simple library for masking strings",
   "main": "lib/index.js",
@@ -10,8 +10,8 @@
     "test": "jest --config jestconfig.json",
     "typecheck": "tsc --noEmit --skipLibCheck",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
+    "prepublishOnly": "npm test && npm run format",
+    "preversion": "npm run format",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
