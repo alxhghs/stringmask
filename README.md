@@ -32,13 +32,13 @@ str = maskString("abcdefghijklmnopqrstuvwxyz123456", {
 # Types
 
 ```typescript
-declare type Options = {
+export type Options = {
     maskWith?: string;
     unmaskedStartCharacters?: number;
     unmaskedEndCharacters?: number;
     ignoreChars?: string[];
 };
-export declare function maskString(text: string, options?: Options): string;
+export function maskString(text: string, options?: Options): string;
 ```
 
 # Options
