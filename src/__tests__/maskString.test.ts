@@ -100,3 +100,29 @@ test("Mask SSN except last 3, ignore '-' and mask with 'x'", () => {
         maskString(SSN, { unmaskedEndCharacters, ignoreChars, maskWith }),
     ).toBe(maskedValue);
 });
+
+test("Mask nothing because of text length", () => {
+    const unmaskedEndCharacters = 4;
+    const unmaskedStartCharacters = 4;
+    const text = "abcd1234";
+    expect(
+        maskString(text, { unmaskedStartCharacters, unmaskedEndCharacters }),
+    ).toBe(text);
+});
+
+test("Unmask first 4 and last 4", () => {
+    const unmaskedEndCharacters = 4;
+    const unmaskedStartCharacters = 4;
+    const text = "abcde1234";
+    const maskedValue = "abcd*1234";
+    expect(
+        maskString(text, { unmaskedStartCharacters, unmaskedEndCharacters }),
+    ).toBe(maskedValue);
+});
+
+test("Mask but ignore many characters", () => {
+    const ignoreChars = ["a-z", "0-9", "-"];
+    const text = "abc--ABC123";
+    const maskedValue = "abc--***123";
+    expect(maskString(text, { ignoreChars })).toBe(maskedValue);
+});
